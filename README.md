@@ -1,26 +1,28 @@
+
+
 # SIGNAL RAIN
 
 <hr>
 
 <p align="center">
-   <img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge" #vitrinedev/>
+   <img src="http://img.shields.io/static/v1?label=STATUS&message=UNDER%20DEVELOPMENT&color=RED&style=for-the-badge" #vitrinedev/>
 </p>
+
+
 
 ### Tópicos 
 
 - [Project description](#project-description)
 
-- [Funcionalidades](#funcionalidades)
+- [Functionalities](#functionalities)
 
-- [Aplicação](#aplicação)
+- [Technologies used](#technologies-used)
 
-- [Ferramentas utilizadas](#ferramentas-utilizadas)
+- [Run the project](#run-the-project)
 
-- [Acesso ao projeto](#acesso-ao-projeto)
+- [Developer](#developer)
 
-- [Abrir e rodar o projeto](#abrir-e-rodar-o-projeto)
-
-- [Desenvolvedores](#desenvolvedores)
+---
 
 ## Project description
 
@@ -34,47 +36,84 @@ With this in mind and knowing that in countries like the United States, Canada, 
 ![Image that demonstrates the reason why the project is being motivated.](https://fastcompanybrasil.com/wp-content/webp-express/webp-images/uploads/2024/05/KV_Site-22-1536x865.jpg.webp)
 </p>
 
-## Funcionalidades
+---
+
+## Functionalities
 
 :heavy_check_mark: `Feature 1:` Carry out research regarding the climate by city name.
-:heavy_check_mark: `Feature 2:` Under development.
 
+```json
+{
+  "coord": { "lon": -51.9386, "lat": -23.4253 },
+  "weather": [ { "id": 800, "main": "Clear", "description": "clear sky", "icon": "01d" } ],
+  "base": "stations",
+  "main": {
+    "temp": 294.08,
+    "feels_like": 293.51,
+    "temp_min": 294.08,
+    "temp_max": 294.08,
+    "pressure": 1016,
+    "humidity": 49
+  },
+  "visibility": 10000,
+  "wind": { "speed": 6.17, "deg": 30 },
+  "clouds": { "all": 0 },
+  "dt": 1718798356,
+  "sys": {
+    "type": 1,
+    "id": 8387,
+    "country": "BR",
+    "sunrise": 1718791709,
+    "sunset": 1718830195
+  },
+  "timezone": -10800,
+  "id": 3457671,
+  "name": "Maringá",
+  "cod": 200
+}
+```
 
+:heavy_check_mark: `Feature 2:` Meteorological monitoring work function, currently with static data defining only two cities, and any city can be added.
 
+![Image demonstrating the result of the monitoring function.](image-1.png)
 
-## Aplicação
+---
 
-<div align="center">
+## Technologies used
+<div>
+  <a href="https://nodejs.org/en" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="NodeJs" width="60" height="60"/> </a> 
 
-![Android Emulator](https://user-images.githubusercontent.com/37356058/135944390-ec96d4ec-ee43-4db9-882f-89be66aad23a.gif)
+  <a href="https://www.typescriptlang.org/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/512px-Typescript_logo_2020.svg.png" alt="Typescript" width="60" height="60"/> </a>
 
-  </div>
+  <a href="https://pnpm.io/" target="_blank"> <img src="https://seeklogo.com/images/P/pnpm-logo-21DC828CD8-seeklogo.com.png" alt="PNPM" width="60" height="auto"/> </a>
+</div>
 
-###
+---
 
-## Ferramentas utilizadas
+## Run the project
 
-<a href="https://www.java.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="java" width="40" height="40"/> </a> 
+After cloning the project, some steps must be followed:
 
-<a href="https://developer.android.com/studio" target="_blank"> <img src="https://developer.android.com/images/logos/android.svg" alt="androidStudio" width="40" height="40"/> </a> <a href="https://firebase.google.com/?hl=pt" target="_blank"> <img src="https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_96dp.png" alt="firebase" width="40" height="40"/> </a>
+- In order to access and test the code, you must have an API_KEY created at https://openweathermap.org/ and configured in your Environment variables as required in src/config/dotenv.ts.
 
-###
+- Open the project with your preferred editor;
+- In the project, PNPM was used as a package manager, so run:
+  - pnpm install
+- To run the project, use the command:
+  - pnpm run dev
+- To access Swagger documentation, go to:
+  - http://localhost:3000/api-docs
+- To test the query by city name, in a testing software of your choice, Postman, Insomnia, etc...
+  - Create a collection with the POST method on the route http://localhost:3000/api/weather;
+  - In the Body, change it to raw and in JSON format and send the request as follows:
+```JSON
+{
+    "cityName": "Maringá"
+}
+```
 
-## Acesso ao projeto
+---
 
-Você pode [acessar o código fonte do projeto](https://github.com/camilafernanda/GlicoCare) ou [baixá-lo](https://github.com/camilafernanda/GlicoCare/archive/refs/heads/main.zip).
-
-## Abrir e rodar o projeto
-
-Após baixar o projeto, você pode abrir com o `Android Studio`. Para isso, na tela de launcher clique em:
-
-- `Open an Existing Project` (ou alguma opção similar);
-- Procure o local onde o projeto está e o selecione (Caso o projeto seja baixado via zip, é necessário extraí-lo antes de procurá-lo);
-- Por fim clique em `OK`.
-
-O `Android Studio` deve executar algumas tasks do *Gradle* para configurar o projeto, aguarde até finalizar. Ao finalizar as tasks, você pode executar o App 🏆 
-
-## Desenvolvedores
-
-| [<img src="https://avatars.githubusercontent.com/u/37356058?v=4" width=115><br><sub>Camila Fernanda Alves</sub>](https://github.com/camilafernanda) |  [<img src="https://avatars.githubusercontent.com/u/38091359?v=4" width=115><br><sub>Clóvis Ribeiro Júnior</sub>](https://github.com/crovim)  |
-| :---: | :---: 
+# Developer
+### Vinícius Staiguer
+##### vinistaiguer@gmail.com
