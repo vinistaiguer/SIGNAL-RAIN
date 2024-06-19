@@ -1,0 +1,74 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Weather Check API",
+        "description": "This API is initially intended to check the climate of the region where you live",
+        "contact": {
+            "email": "vinistaiguer@gmail.com"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000/api",
+            "description": "Test API to get weather data in any region."
+        }
+    ],
+    "paths": {
+        "/weather": {
+            "post":{
+                "summary": "Get weather for city",
+                "description": "Get the weather for any city, in a post made on this route.",
+                "tags": ["Weather"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/City"
+                            },
+                            "examples": {
+                                "City": {
+                                    "value": {
+                                        "cityName": "Maringá"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "500": {
+                        "description": "Error getting weather information"
+                    },
+                    "400": {
+                        "description": "City name is mandatory"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "aplication/json": {
+                                "schema": {
+                                    "type":"object",
+                                    "$ref":"#/components/schemas/City"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "City" :{
+                "type": "object",
+                "properties": {
+                    "cityName": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+
+}
