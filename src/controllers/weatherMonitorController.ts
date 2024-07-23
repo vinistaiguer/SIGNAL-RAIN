@@ -8,7 +8,7 @@ interface Alert {
 }
 
 export const weatherMonitorController = async () => {
-    const allCityNames = ["Rio Branco", "Maceió"];
+    const allCityNames = ["Rio Branco", "Maceió", "Sorocaba", "Maringá", "Budapeste", ];
     console.log("allCityNames getWeatherController", allCityNames);
 
     try {

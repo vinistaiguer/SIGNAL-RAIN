@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_KEY } from "../config/dotenv";
+import { API_KEY, API_KEY_NEWS } from "../config/dotenv";
 
 export const fetchWeatherData = async ( cityName: string ) => {
     const response = await axios.get(
@@ -7,3 +7,11 @@ export const fetchWeatherData = async ( cityName: string ) => {
     )
     return response.data;
 };
+
+export const fetchNews = async () => {
+    const response = await axios.get(
+        `https://newsapi.org/v2/top-headlines?country=br&apiKey=${API_KEY_NEWS}`
+    )
+    console.log
+    return response.data
+}
