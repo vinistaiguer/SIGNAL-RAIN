@@ -10,7 +10,7 @@
     },
     "servers": [
         {
-            "url": "http://localhost:3000/api",
+            "url": "https://signal-rain.onrender.com/api",
             "description": "Test API to get weather data in any region."
         }
     ],
